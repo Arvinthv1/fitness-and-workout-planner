@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>User Dashboard</title> 
+     <style> 
+        body {  
+            font-family: 'Times New Roman', Times, serif;   
+            background-color: #f4f7fb;  
+            color: #333;  
+            margin: 0; 
+            padding: 0; 
+        } 
+        .container {  
+            max-width: 800px;  
+            margin: auto;  
+            padding: 20px;  
+        } 
+        .workout-categories {  
+            display: flex;  
+            justify-content: space-around;  
+            margin-bottom: 20px;  
+        } 
+        .workout-categories div {  
+            padding: 12px 20px;  
+            background-color: #4CAF50;  
+            color: white;  
+            border-radius: 5px;  
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            transition: background-color 0.3s, transform 0.2s; 
+        } 
+        .workout-categories div:hover { 
+            background-color: #45a049; 
+            transform: translateY(-2px); 
+        } 
+        .user-info {  
+            font-size: 1.2em;  
+            margin-bottom: 20px;  
+            background-color:blue;  
+            color:white; 
+            padding: 15px;  
+            border-radius: 8px;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+            text-align: center; 
+        } 
+        .plan-options {  
+            display: flex;  
+            flex-wrap: wrap;  
+            gap: 15px;  
+            justify-content: space-between; 
+        } 
+        .plan-card { 
+            flex: 1 1 calc(50% - 10px);  
+            padding: 20px; 
+            text-align: center; 
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            background-color: #ffffff; 
+            cursor: pointer; 
+            transition: transform 0.2s ease, box-shadow 0.2s; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        } 
+        .plan-card:hover {  
+            transform: translateY(-4px);  
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  
+            background-color: #e6f2ff; 
+        } 
+        .plan-card h4 { 
+            margin: 0; 
+            color: #333; 
+            font-size: 1.1em; 
+        } 
+        .plan-card p { 
+            margin-top: 8px; 
+            font-size: 0.9em; 
+            color: #555; 
+        } 
+        .selected-plan {  
+            margin-top: 20px;  
+            font-size: 1.2em;  
+            color: #4CAF50;  
+            text-align: center; 
+            background-color: #f0f9f4; 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        } 
+    </style></head><body> 
+    <div class="container"> 
+        <!-- Workout Categories at the Top --> 
+        <div class="workout-categories"> 
+            <div>Cardio</div> 
+            <div>Strength</div> 
+            <div>Yoga</div> 
+        </div>        <div class="user-info"> 
+            Welcome, <span id="userName">User Name</span>! 
+        </div> 
+        <div class="plan-options"> 
+            <div class="plan-card" onclick="selectPlan('1 Month Plan')">1 Month Plan</div> 
+            <div class="plan-card" onclick="selectPlan('2 Month Plan')">2 Month Plan</div> 
+            <div class="plan-card" onclick="selectPlan('3 Month Plan')">3 Month Plan</div> 
+            <div class="plan-card" onclick="selectPlan('6 Month Plan')">6 Month Plan</div> 
+            <div class="plan-card" onclick="selectPlan('9 Month Plan')">9 Month Plan</div> 
+            <div class="plan-card" onclick="selectPlan('12 Month Plan')">12 Month Plan</div> 
+        </div> 
+        <div class="selected-plan"> 
+            Selected Plan: <span id="chosenPlan">None</span> 
+        </div> </div> <script> 
+        function selectPlan(plan) { 
+            document.getElementById("chosenPlan").innerText = plan; 
+        } 
+        window.onload = function() { 
+            // Simulating a user name from session or database 
+            const userName = "John Doe"; // This could be dynamically fetched from a server-side 
+session 
+            document.getElementById("userName").innerText = userName; 
+        }; 
+    </script></body></html>

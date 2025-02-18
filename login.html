@@ -1,0 +1,186 @@
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/> 
+    <title>The Lift Lab</title> 
+    <style> 
+       *{ 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+} 
+       .modal { 
+            display: none;  
+            position: fixed;  
+            z-index: 1;  
+            left: 0; 
+            top: 0; 
+            width: 100%;  
+            height: 100%;  
+            overflow: auto;  
+            background-color: rgba(0, 0, 0, 0.7);  
+   } 
+        .modal-content { 
+            background-color: rgba(255, 255, 255, 0.1);  
+            border-radius: 10px;  
+            margin: 15% auto;  
+            padding: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.2);  
+            width: 80%;  
+            backdrop-filter: blur(10px);  
+            color: white;  
+        } 
+        .close { 
+            color: white; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        } 
+        .close:hover, 
+        .close:focus { 
+            color: #ffcc00;  
+            text-decoration: none; 
+            cursor: pointer; 
+        } 
+        label, input { 
+            color: white;  
+        } 
+        input { 
+            width: 100%;  
+           
+ 
+  padding: 10px; 
+            margin: 5px 0; 
+            border: none; 
+            border-radius: 5px; 
+            background: rgba(255, 255, 255, 0.3); 
+            color: white;  
+        } 
+        input::placeholder { 
+            color: rgba(255, 255, 255, 0.5);  
+        } 
+        button { 
+            background-color: #ffcc00;  
+           color: black;  
+            border: none; 
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+        } 
+        button:hover { 
+            background-color: #ffd700;  
+        } 
+        .tab { 
+            margin: 10px 0; 
+            cursor: pointer; 
+            padding: 10px; 
+            border-radius: 5px; 
+      background-color: rgba(255, 255, 255, 0.2); 
+            text-align: center; 
+        } 
+        .tab.active { 
+            background-color: rgba(255, 255, 255, 0.4); 
+        } 
+    </style> 
+</head> 
+<body> 
+<div class="website-wrapper"> 
+    <section class="home" id="home"> 
+        <div class="home-overlay"></div> 
+        <nav class="main-navbar"> 
+            <div class="logo"> 
+                <img src="./images/logo.jpg"> 
+            </div> 
+            <ul class="nav-list"> 
+                <li><a href="#home">Home</a></li> 
+                <li><a href="#about">About</a></li> 
+                <li><a href="#our_team">Trainers</a></li> 
+                <li><a href="#pricing">Prices</a></li> 
+            </ul> 
+            <a href="#" class="join-us-btn-wrapper"> 
+                <button class="btn join-us-btn" id="joinUsBtn">Join Us</button> 
+            </a> 
+            <div class="hamburger-btn"> 
+                <span></span> 
+ 
+                                                
+ 
+                                                                                                                    
+<span></span> 
+                <span></span> 
+            </div> 
+        </nav> 
+      
+    </section> 
+ 
+    <!-- Login Modal --> 
+    <div id="loginModal" class="modal"> 
+        <div class="modal-content"> 
+            <span class="close">&times;</span> 
+            <h2>Login</h2> 
+            <div class="tab active" id="userTab">User Login</div> 
+  <div class="tab" id="adminTab">Admin Login</div> 
+            <form id="loginForm"> 
+                <div id="userForm"> 
+                    <label for="username">Username:</label> 
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required> 
+                    <label for="password">Password:</label> 
+                    <input type="password" id="password" name="password" placeholder="Enter your password" 
+required> 
+                </div> 
+                <div id="adminForm" style="display: none;"> 
+                    <label for="adminUsername">Admin Username:</label> 
+                    <input type="text" id="adminUsername" name="adminUsername" placeholder="Enter admin username" 
+required> 
+                    <label for="adminPassword">Admin Password:</label> 
+                   <input type="password" id="adminPassword" name="adminPassword" placeholder="Enter admin 
+password" required> 
+                </div> 
+                <button type="button" onclick="window.location.href='admindash.html'">Login</button> 
+            </form> 
+        </div> 
+    </div> 
+<script> 
+    // Get modal and buttons 
+    var modal = document.getElementById("loginModal"); 
+    var joinUsBtn = document.getElementById("joinUsBtn"); 
+    var closeBtn = document.getElementsByClassName("close")[0]; 
+    var userTab = document.getElementById("userTab"); 
+    var adminTab = document.getElementById("adminTab"); 
+    var userForm = document.getElementById("userForm"); 
+    var adminForm = document.getElementById("adminForm"); 
+    // Show modal on button click 
+    joinUsBtn.onclick = function() { 
+        modal.style.display = "block"; 
+    } 
+    // Close modal when 'x' is clicked 
+    closeBtn.onclick = function() { 
+        modal.style.display = "none"; 
+    // Close modal when clicking outside of modal 
+    window.onclick = function(event) { 
+        if (event.target == modal) { 
+            modal.style.display = "none"; 
+ 
+                                     
+ 
+}    }  
+    userTab.onclick = function() { 
+        userForm.style.display = "block"; 
+        adminForm.style.display = "none"; 
+        userTab.classList.add("active"); 
+        adminTab.classList.remove("active"); 
+    } 
+    adminTab.onclick = function() { 
+        userForm.style.display = "none"; 
+        adminForm.style.display = "block"; 
+        adminTab.classList.add("active"); 
+        userTab.classList.remove("active"); 
+    } 
+</script> 
+</body> 
+</html> 

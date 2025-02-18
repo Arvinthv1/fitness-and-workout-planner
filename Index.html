@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>The Lift Lab</title>
+</head>
+<body>
+<div class="website-wrapper">
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-overlay"></div>
+        <nav class="main-navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="The Lift Lab Logo">
+            </div>
+            <!-- Navigation List -->
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#our-team">Trainers</a></li>
+                <li><a href="#pricing">Prices</a></li>
+            </ul>
+            <!-- Join Us Button -->
+            <a href="#" class="join-us-btn-wrapper">
+                <button class="btn join-us-btn" onclick="window.location.href='login.html'" style="text-decoration:none;color:white;">
+                    Join Us
+                </button>
+            </a>
+            <!-- Hamburger Button -->
+            <div class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- Banner -->
+        <div class="banner">
+            <div class="banner-contents">
+                <h2>Start your training at The Lift Lab</h2>
+                <h1>Fit body needs more training</h1>
+                <p>Are you ready to take control of your fitness journey? Our Fitness and Workout Planner is designed to empower you to achieve your health goals—whether you’re aiming to get stronger, lose weight, or simply maintain a healthy lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="our-team" id="our-team">
+        <header class="section-header">
+            <h3>Our Trainers</h3>
+            <h1>Meet Our Experienced Trainers</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </header>
+        <div class="team-contents">
+            <!-- Trainer 1 -->
+            <div class="trainer-card">
+                <div class="trainer-image">
+                    <img src="images/coach1.jpeg" alt="Trainer Lily Martinez">
+                </div>
+                <div class="trainer-desc">
+                    <h2>Lily Martinez</h2>
+                    <p>Muscles Trainer</p>
+                </div>
+            </div>
+            <!-- Trainer 2 -->
+            <div class="trainer-card">
+                <div class="trainer-image">
+                    <img src="images/coach2.jpeg" alt="Trainer Zoe Carter">
+                </div>
+                <div class="trainer-desc">
+                    <h2>Zoe Carter</h2>
+                    <p>Boxing Trainer</p>
+                </div>
+                <div class="trainer-contact">
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Trainer 3 -->
+            <div class="trainer-card">
+                <div class="trainer-image">
+                    <img src="images/coach3.jpeg" alt="Trainer Grace Turner">
+                </div>
+                <div class="trainer-desc">
+                    <h2>Grace Turner</h2>
+                    <p>Fitness Trainer</p>
+                </div>
+                <div class="trainer-contact">
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="script.js"></script>
+<script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger-btn');
+    const navList = document.querySelector('.nav-list');
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="ISO-8859-1"> 
+<title>Registration Form</title> 
+<link rel="stylesheet" href="css/bootstrap.css"> 
+<style> 
+*{ 
+ margin: 0; 
+ padding: 0; 
+ box-sizing: border-box; 
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+} 
+  #frm{ 
+     width:500px; 
+     margin:auto; 
+     margin-top:100px; 
+  } 
+  body{ 
+ width: 100%; 
+ min-height: 100vh; 
+ background-image: url('file:///C:/Users/sneha/eclipseworkspace/Fitnesspro/Images/home1.jpeg'); 
+ background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+} 
+button.btn{ 
+ padding: 10px 25px; 
+ background-color: var(--light-text-clr); 
+ color: var(--dark-heading-clr); 
+ font-size: 15px; 
+ font-weight: 500; 
+ border: 1px solid transparent; 
+ border-radius: 25px; 
+ cursor: pointer; 
+ transition: all 0.3s; 
+} 
+</style> 
+</head> 
+<body class="container-fluid"> 
+    <form action="register" method="post" class="form card" id="frm"> 
+        <center><h2 class="bg-dark text-white card-header">Registration Form</h2></center> 
+        <table class="table table-hover"> 
+        <tr> <td>Name</td> 
+         <td><input type="text" name="userName" required></td> 
+        </tr> <tr>  <td>Email</td> 
+         <td><input type="email" name="email" required></td> </tr>    <tr>  <td>Mobile</td> 
+         <td><input type="text" name="mobile" required></td> 
+        </tr><tr><td>DOB</td> <td><input type="date" name="dob" required></td> 
+        </tr><tr><td>City</td>  <td> 
+            <select name="city"> 
+                <option value="pune">Pune</option> 
+                <option value="Mumbai">Mumbai</option> 
+                <option value="Delhi">Delhi</option> 
+                <option value="Hyderabad">Hyderabad</option> 
+            </select></td></tr><tr><td>Gender</td><td> 
+            <input type="radio" name="gender" value="male"> Male &nbsp; 
+            <input type="radio" name="gender" value="female"> Female 
+         </td></tr><tr><td>Role</td><td><input type="checkbox" name="role" value="user"> 
+User &nbsp;<input type="checkbox" name="role" value="admin"> Admin 
+         </td></tr><tr class="card-footer"> 
+         <td><button type="submit" class="btn btn-outline-success">Register</button></td> 
+         <td><button type="reset" class="btn btn-outline-danger">Cancel</button></td> 
+        </tr></table></form></body></html> 

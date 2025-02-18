@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin Dashboard - The Lift Lab</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('./images/home2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .workout-form {
+            background: rgba(255, 255, 255, 0.1); /* Transparent white */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Blur for Safari */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .workout-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .workout-form input,
+        .workout-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        .workout-form input::placeholder,
+        .workout-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .workout-form button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+        .workout-form button:hover {
+            background-color: #ffd700;
+        }
+        .workout-list {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            color: white;
+        }
+        .workout-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 0;
+        }
+        .workout-item:last-child {
+            border-bottom: none;
+        }
+        .workout-item h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="workout-form">
+        <h1>Admin Dashboard</h1>
+        <p style="text-align: center; color: white; font-size: 18px;">Manage Workouts</p>
+        
+        <form id="workoutForm">
+            <label for="workoutName">Workout Name:</label>
+            <input type="text" id="workoutName" name="workoutName" placeholder="Enter workout name" required>
+
+            <label for="workoutDescription">Workout Description:</label>
+            <textarea id="workoutDescription" name="workoutDescription" placeholder="Enter workout description"
+                      rows="5" required></textarea>
+
+            <button type="submit">Save Workout</button>
+        </form>
+    </div>
+
+    <div class="workout-list" id="workoutList">
+        <h2>Saved Workouts</h2>
+        <!-- Saved workouts will be displayed here -->
+    </div>
+
+    <script>
+        // Handle form submission
+        const workoutForm = document.getElementById('workoutForm');
+        const workoutList = document.getElementById('workoutList');
+
+        workoutForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const workoutName = document.getElementById('workoutName').value;
+            const workoutDescription = document.getElementById('workoutDescription').value;
+
+            // Create new workout item
+            const workoutItem = document.createElement('div');
+            workoutItem.classList.add('workout-item');
+            workoutItem.innerHTML = `
+                <h3>${workoutName}</h3>
+                <p>${workoutDescription}</p>
+            `;
+
+            // Add the new workout to the list
+            workoutList.appendChild(workoutItem);
+            workoutForm.reset();
+        });
+    </script>
+
+</body>
+</html>
